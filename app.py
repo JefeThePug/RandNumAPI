@@ -6,7 +6,7 @@ import sys
 app = FastAPI()
 
 
-@app.get("/")
+@app.get("/api/v1/")
 def index():
     outline = {
         "GET": {
@@ -20,12 +20,12 @@ def index():
     }
     return outline
 
-@app.get("/random")
+@app.get("/api/v1/random")
 def api_random():
     output = {"random number": random.random()}
     return output
 
-@app.get("/randint/")
+@app.get("/api/v1/randint/")
 def api_random(a: int, b: int = None):
     if b is None:
         a, b = 0, a
